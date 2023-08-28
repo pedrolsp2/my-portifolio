@@ -17,7 +17,19 @@ import NJS from '../assets/next.png'
 import PHP from '../assets/php.png'
 import SQL from '../assets/mysql.png'
 import UI from '../assets/figma.png'
-import Project from "@/components/pages/projetc";
+import Project, { Props as Pr } from "@/components/pages/projetc";
+
+interface IProject {
+  name: string;
+  descrition: string;
+  linkGit?: string;
+  linkWeb?: string;
+}
+
+interface Propss {
+  data: IProject[];
+  badge: string;
+}
 
 export default function IndexPage() {
   const [toggle, setToggle] = useState<boolean>(false)
@@ -63,6 +75,54 @@ export default function IndexPage() {
       stack: "UI Desing",
     },
   ]);
+  const [valor, setValor] = useState<IProject[]>([{
+    name: 'Site 1',
+    descrition: 'Veja as novas casa da cidade'
+  },
+  {
+    name: 'Site 2',
+    descrition: 'Site onde há todas as novidades do Brasil'
+  },
+  {
+    name: 'Site 3',
+    descrition: 'Explore os melhores restaurantes da região'
+  },
+  {
+    name: 'Site 4',
+    descrition: 'Notícias atualizadas sobre tecnologia e inovação'
+  },
+  {
+    name: 'Site 5',
+    descrition: 'Dicas de viagem para destinos exóticos'
+  },
+  {
+    name: 'Site 6',
+    descrition: 'Aprenda a criar projetos incríveis com DIY'
+  },
+  {
+    name: 'Site 7',
+    descrition: 'Moda e tendências para todas as estações'
+  },
+  {
+    name: 'Site 8',
+    descrition: 'Descubra os segredos da fotografia profissional'
+  },
+  {
+    name: 'Site 9',
+    descrition: 'Cursos online para aprimorar suas habilidades'
+  },
+  {
+    name: 'Site 10',
+    descrition: 'Notícias e análises financeiras globais'
+  }
+  ])
+
+  const [project, setProject] = useState<Propss[]>([
+    {
+      data: valor,
+      badge: 'JavaScript'
+    }
+  ])
   const [filteredData, setFilteredData] = useState<Props[]>(data);
 
   const handleResize = () => {
@@ -73,7 +133,7 @@ export default function IndexPage() {
     }
   };
 
-  useEffect(() => {
+  useEffect(() => {   
     window.addEventListener('resize', handleResize);
     handleResize();
     return () => {
@@ -133,7 +193,9 @@ export default function IndexPage() {
           <h1 className="text-zinc-200 font-semibold text-4xl max-md:text-3xl max-sm:text-2xl">Projetos</h1>
           <p className="text-zinc-600 text-base mt-4">Existe alguns projetos que fazemos durante cursos, boostraps e projetos pessoais. Dentro desses estou listando alguns os quais fiz durante minha vida academica, há mais projetos e irei atualizando durante o tempo.</p>
           <div className="flex gap-5 flex-wrap my-16 max-md:justify-center">
-          <Project /><Project /><Project /><Project /><Project /><Project />
+          {valor.map((item) => (
+                <Project key={item.name} badge="JavaScript" data={item} />
+            ))}
           </div>
         </section>
         <section id="contact" className="p-2 mt-9">
