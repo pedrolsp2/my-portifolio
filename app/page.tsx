@@ -17,6 +17,8 @@ import NJS from '../assets/next.png'
 import PHP from '../assets/php.png'
 import SQL from '../assets/mysql.png'
 import UI from '../assets/figma.png'
+import CSHARP from '../assets/csharp.png'
+import FIRE from '../assets/firebase.png'
 import Project, { Props as Pr } from "@/components/pages/projetc";
 
 interface IProject {
@@ -50,6 +52,11 @@ export default function IndexPage() {
       stack: "JavaScript",
     },
     {
+      name: "React Native",
+      url: RJS,
+      stack: "Mobile",
+    },
+    {
       name: "Vite JS",
       url: VJS,
       stack: "JavaScript",
@@ -65,8 +72,18 @@ export default function IndexPage() {
       stack: "Backend",
     },
     {
+      name: "C Sharp",
+      url: CSHARP,
+      stack: "Backend",
+    },
+    {
       name: "MySQL",
       url: SQL,
+      stack: "Banco de Dados",
+    },
+    {
+      name: "FireBase",
+      url: FIRE,
       stack: "Banco de Dados",
     },
     {
@@ -77,43 +94,43 @@ export default function IndexPage() {
   ]);
   const [valor, setValor] = useState<IProject[]>([{
     name: 'Site 1',
-    descrition: 'Veja as novas casa da cidade'
+    descrition: 'Em construção'
   },
   {
     name: 'Site 2',
-    descrition: 'Site onde há todas as novidades do Brasil'
+    descrition: 'Em construção'
   },
   {
     name: 'Site 3',
-    descrition: 'Explore os melhores restaurantes da região'
+    descrition: 'Em construção'
   },
   {
     name: 'Site 4',
-    descrition: 'Notícias atualizadas sobre tecnologia e inovação'
+    descrition: 'Em construção'
   },
   {
     name: 'Site 5',
-    descrition: 'Dicas de viagem para destinos exóticos'
+    descrition: 'Em construção'
   },
   {
     name: 'Site 6',
-    descrition: 'Aprenda a criar projetos incríveis com DIY'
+    descrition: 'Em construção'
   },
   {
     name: 'Site 7',
-    descrition: 'Moda e tendências para todas as estações'
+    descrition: 'Em construção'
   },
   {
     name: 'Site 8',
-    descrition: 'Descubra os segredos da fotografia profissional'
+    descrition: 'Em construção'
   },
   {
     name: 'Site 9',
-    descrition: 'Cursos online para aprimorar suas habilidades'
+    descrition: 'Em construção'
   },
   {
     name: 'Site 10',
-    descrition: 'Notícias e análises financeiras globais'
+    descrition: 'Em construção'
   }
   ])
 
