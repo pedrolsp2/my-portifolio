@@ -18,8 +18,10 @@ import PHP from '../assets/php.png'
 import SQL from '../assets/mysql.png'
 import UI from '../assets/figma.png'
 import CSHARP from '../assets/csharp.png'
+import TS from '../assets/ts.png'
 import FIRE from '../assets/firebase.png'
 import Project, { Props as Pr } from "@/components/pages/projetc";
+import Footer from "@/components/pages/footer";
 
 interface IProject {
   name: string;
@@ -49,6 +51,11 @@ export default function IndexPage() {
     {
       name: "React JS",
       url: RJS,
+      stack: "JavaScript",
+    },
+    {
+      name: "TypeScript",
+      url: TS,
       stack: "JavaScript",
     },
     {
@@ -219,6 +226,7 @@ export default function IndexPage() {
 
         </section>
       </div>
+      <Footer />
     </div>
   )
 }

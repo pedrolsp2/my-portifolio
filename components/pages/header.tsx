@@ -5,7 +5,7 @@ import Image from "next/image"
 
 import my from '../../assets/image.png';
 
-import "./header.css"
+import "./style.css"
 import NavBar from "./navbar"
 
 export default function Header() {
